@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ADD8E6; /* 浅蓝色 */
+    font-family: Arial, sans-serif;
+    color: black; /* 所有字体颜色为黑色 */
+    font-size: 16px; /* 假设虚拟文本的基准字体大小为16px */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 1.75em; /* 比虚拟文本大75% */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* 添加间距 */
+    padding: 0 20px; /* 添加左右内边距 */
+}
+
+.box {
+    background-color: #87CEEB; /* 比浅蓝色稍微深点 */
+    padding: 10px;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+
+.title-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.small-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px; /* 调整宽度 */
+    height: 40px; /* 调整高度 */
+    background-color: #4682B4; /* 比box背景色再深点 */
+    border: 1px solid black;
+}
+
+.small-box h2 {
+    margin: 0;
+    color: black; /* 字体颜色为黑色 */
+    font-size: 1.25em; /* 比虚拟文本大25% */
+}
+
+.content {
+    background-color: transparent; /* 透明背景色 */
+    font-size: 1em; /* 虚拟文本的基准字体大小 */
+}
+
+/* 移动设备视图 (767px 及以下) */
+@media (max-width: 767px) {
+    .box {
+        width: 95%; /* 在移动视图中每个box占据整行 */
+        margin: 10px 2.5%;
+        flex: 1 1 95%; /* Flexbox 属性 */
+    }
+}
+
+/* 平板电脑视图 (768px 至 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .box {
+        width: calc(45% - 22px); /* 前两个部分各占45% */
+        margin: 10px 2.5%;
+        flex: 1 1 calc(45% - 22px); /* Flexbox 属性 */
+    }
+    .box:nth-child(3) {
+        width: 95%; /* 第三个部分单独占据整行 */
+        margin: 10px 2.5%;
+        flex: 1 1 95%; /* Flexbox 属性 */
+    }
+}
+
+/* 桌面视图 (992px 及以上) */
+@media (min-width: 992px) {
+    .box {
+        width: calc(33.333% - 26.667px); /* 使用calc确保间距 */
+        flex: 1 1 calc(33.333% - 26.667px); /* Flexbox 属性 */
+    }
+}
